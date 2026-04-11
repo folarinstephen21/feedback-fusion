@@ -42,3 +42,10 @@ npx prisma migrate updates and sync prisma.schema with the origin db
 npx prisma generate generates a look alike of our prisma.schema that our codebase works with
 
 prisma itself is a cli that enables us run all the command above
+
+## Prisma Errors
+prisma has to be of same type with prisma/client else conflicting errors will come up.
+
+I had to fic this errors by removing output property from schema.prisma and updating settings on prisma.config.ts to match this
+
+Adjustments were also made to imported PrismaClient which earlier resolved to a generated output directory to node_modules @prisma/client

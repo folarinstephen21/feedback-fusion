@@ -1,6 +1,7 @@
+
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg"; // Ensure you have 'pg' installed
-import { PrismaClient } from "./generated/prisma/client";
+import { PrismaClient } from "@prisma/client";
 import "dotenv/config";
 
 // 1. Create a pool for your database connection
@@ -26,3 +27,5 @@ export const prisma =
 if (process.env.NODE_ENV !== "production") {
   globalForPrisma.prisma = prisma;
 }
+
+

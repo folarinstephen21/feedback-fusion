@@ -1,16 +1,16 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
+// output   = "../lib/generated/prisma"
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
-  provider = "prisma-client"
-  output   = "../lib/generated/prisma"
+  provider = "prisma-client-js"
+ 
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  
 }
 
 
@@ -19,6 +19,7 @@ model User {
   clerkUserId   String   @unique
   email         String?  @unique
   image         String
+  name          String?
   posts         Post[]
   votes         Vote[]
   role          Role      @default(user)
@@ -61,5 +62,6 @@ model Vote {
   post        Post  @relation(fields: [postId], references: [id])
   postId      Int
 
+  @@unique([userId, postId])
   @@map("votes")
 }
