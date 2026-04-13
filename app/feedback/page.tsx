@@ -15,6 +15,14 @@ import { getCategoryDesign } from "../data/category-data";
 import { Badge } from "@/components/ui/badge";
 import FeedbackList from "@/components/feedback-list";
 
+
+// 1. Define the shape of the grouped result
+type CategoryGroup = {
+  category: string;
+  _count: number; // Remove the curly braces here
+};
+
+
 export default async function FeedbackPage() {
   // Get the useId from clerk auth
   const { userId } = await auth();
@@ -74,7 +82,7 @@ export default async function FeedbackPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {categories.map((cat) => {
+                  {categories.map((cat: CategoryGroup) => {
                     const design = getCategoryDesign(cat.category);
                     const Icon = design.icon;
 
