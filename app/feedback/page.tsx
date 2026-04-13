@@ -107,9 +107,9 @@ export default async function FeedbackPage() {
             </Card>
           </div>
           {/* Main Content */}
-          {/* <div className="lg:col-span-3">
+          <div className="lg:col-span-3">
             <FeedbackList initialPosts={posts} userId={userId} />
-          </div> */}
+          </div>
         </div>
       </div>
     </>

@@ -25,6 +25,7 @@ export default function FeedbackList({
 }) {
   const [posts, setPosts] = useState(initialPosts);
 
+  
   const handleVote = async (postId: number) => {
     if (!userId) {
       toast.error("Please sign in to vote on feedback");

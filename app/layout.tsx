@@ -32,7 +32,8 @@ export default async function RootLayout({
               {children}
             </main>
             <Footer />
-            <Toaster />
+            {/* The richColors attributes below beautifies the toater colors for success and failed responses */}
+            <Toaster richColors />
           </ThemeProvider>
         </body>
       </html>

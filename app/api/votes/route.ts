@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import {prisma} from "@/lib/prisma";
 import { syncCurrentUser } from "@/lib/sync-user";
 import { NextRequest, NextResponse } from "next/server";
 
