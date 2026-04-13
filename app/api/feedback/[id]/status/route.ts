@@ -1,5 +1,5 @@
 import { STATUS_ORDER } from "@/app/data/status-data";
-import prisma from "@/lib/prisma";
+import {prisma} from "@/lib/prisma";
 import { useAuth } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
